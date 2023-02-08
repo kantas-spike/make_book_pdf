@@ -10,7 +10,7 @@ fi
 
 
 idx=1
-while read line
+while read line || [ -n "${line}" ]
 do
     output_path=${PDF_DIR}/`printf "%02d" $idx`0.pdf
     echo "download ${line} to ${output_path} ..."
