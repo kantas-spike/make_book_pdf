@@ -10,15 +10,13 @@
 
 ## 作成方法
 
-もし、自分でPDFをマージしたい場合は、以下の順にシェルを実行してください。
+もし、自分でPDFをマージしたい場合は、以下を実行してください。
 
 ```shell
-sh ./01_download_pdf.sh
-sh ./02_merge_pdf.sh
-sh ./03_add_toc.sh
+make
 ```
 
-ただし、これらのシェルは、macOS 13.2の環境でのみ動作確認しています。
+ただし、本プロジェクトの`Makefile`は、macOS 13.2の環境でのみ動作確認しています。
 また、以下の外部ツール、リポジトリに依存します。
 
 - bash
@@ -27,6 +25,17 @@ sh ./03_add_toc.sh
 - git
 - python3
 - [yutayamamoto/pdfoutline: A command line tool for adding an outline to pdf files](https://github.com/yutayamamoto/pdfoutline)
+
+`Makefile`のコマンドのパスの定義を環境に合せて設定してください。
+
+```Makefile
+# commands
+TOUCH = touch
+CURL = curl
+GS = gs
+GIT = git
+PYTHON3 = python3
+```
 
 ## 目次情報について
 
